@@ -15,7 +15,7 @@ class About
     public static $tz = [
         'show' => []
     ];
-
+    private static $link;
     /**
      * 初始化方法
      */
@@ -25,6 +25,7 @@ class About
         errno::load('reception','error');
         //任何地方都可以连接
         router::$data['link'] = pdo::connect();
+        self::$link= pdo::connect();
     }
 
     /**
